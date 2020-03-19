@@ -16,7 +16,7 @@ const API = {
     const res = await fetch('/api/workouts/' + id, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data) // req.body server side
     })
 
     const json = await res.json()

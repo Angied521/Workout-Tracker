@@ -52,4 +52,7 @@ router.put('/api/workouts/:id', (req, res) => {
   // })
 })
 
+router.get('/api/workouts/range', (req, res) => {
+  Workout.find({ }).limit(7).then(range => res.json(range))
+})
 module.exports = router

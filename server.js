@@ -11,8 +11,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.use(express.static('public'))
+var MONGODB_URI = process.env.MONGOD_URI || "mongodb://localhost/workout";
 
-mongoose.connect('mongodb://localhost/workout', {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
 })

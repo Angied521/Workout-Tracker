@@ -3,9 +3,9 @@ const Workout = require('../models/workout.js')
 // create new workout
 router.post('/api/workouts', ({ body }, res) => {
   // we receive data on req.body
-console.log('=============')
+  console.log('=============')
   console.log(body)
-  Workout.create({exercises: [body]})
+  Workout.create({ exercises: [body] })
     .then(dbWorkout => {
       console.log(dbWorkout)
       res.json(dbWorkout)

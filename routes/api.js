@@ -40,16 +40,10 @@ router.put('/api/workouts/:id', (req, res) => {
       console.log(response)
       res.json(response)
     })
-  // we find the workout by the id aka req.params.id
-  // .findAndModify({_id: req.params.id},null, {$set: {}})
-  // when we find a match we will the add the exercise to that workout
-  /// {$set: { id: '', type: '' }, { name: '' }, (req.body)}
-
-  // the workout will be on req.body
-
-  // .catch(err => {
-  //   res.status(400).json(err)
-  // })
+     .catch(err => {
+      console.log(err)
+      res.status(400).json(err)
+    })
 })
 
 router.get('/api/workouts/range', (req, res) => {

@@ -18,13 +18,13 @@ mongoose.connect(MONGODB_URI, {
   useFindAndModify: false
 })
 
-mongoose.connection
-  .once('open', () => {
-    console.log('connected')
-  })
-  .on('error', error => {
-    console.log('not connected' + error)
-  })
+// mongoose.connection
+//   .once('open', () => {
+//     console.log('connected')
+//   })
+//   .on('error', error => {
+//     console.log('not connected' + error)
+//   })
 
 app.use(require('./routes/api.js'))
 app.use(require('./routes/view.js'))
